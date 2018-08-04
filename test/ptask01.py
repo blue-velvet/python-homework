@@ -1,9 +1,7 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from data import Group, Contact
-from application import Application
+
+from fixture.application import Application
+from model.data import Group, Contact
 
 
 @pytest.fixture
