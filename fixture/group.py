@@ -11,6 +11,16 @@ class GroupHelper:
         wd.find_element_by_name("submit").click()
         wd.find_element_by_xpath("//a[@href='group.php']").click()
 
+    def modify(self, group):
+        wd = self.app.wd
+        wd.find_element_by_xpath("//a[@href='group.php']").click()
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_name("edit").click()
+        wd.find_element_by_name("group_name").send_keys(group.group_name)
+        wd.find_element_by_name("group_footer").send_keys(group.footer_name)
+        wd.find_element_by_name("update").click()
+        wd.find_element_by_xpath("//a[@href='group.php']").click()
+
     def delete(self):
         wd = self.app.wd
         wd.find_element_by_xpath("//a[@href='group.php']").click()
