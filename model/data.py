@@ -1,10 +1,10 @@
 class Group:
-    def __init__(self, group_name, footer_name):
+    def __init__(self, group_name=None, footer_name=None):
         self.group_name = group_name
         self.footer_name = footer_name
 
 class Contact:
-    def __init__(self, firstname, lastname, address):
+    def __init__(self, firstname=None, lastname=None, address=None):
         self.firstname = firstname
         self.lastname = lastname
         self.address = address
