@@ -16,7 +16,7 @@ class GroupHelper:
 
     def fill_form(self, group):
         self.type("group_name", group.group_name)
-        self.type("group_footer", group.group_name)
+        self.type("group_footer", group.group_footer)
 
     def type(self, field_name, text):
         wd = self.app.wd
@@ -44,3 +44,8 @@ class GroupHelper:
         self.select_group()
         wd.find_element_by_name("delete").click()
         self.go_to_group_page()
+
+    def count(self):
+        wd = self.app.wd
+        self.go_to_group_page()
+        return len(wd.find_elements_by_name("selected[]"))
