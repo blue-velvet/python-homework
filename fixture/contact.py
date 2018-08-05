@@ -9,3 +9,9 @@ class ContactHelper:
         wd.find_element_by_name("lastname").send_keys(contact.lastname)
         wd.find_element_by_name("address").send_keys(contact.address)
         wd.find_element_by_name("submit").click()
+
+    def delete(self):
+        wd = self.app.wd
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
