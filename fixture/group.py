@@ -4,7 +4,8 @@ class GroupHelper:
 
     def go_to_group_page(self):
         wd = self.app.wd
-        wd.find_element_by_xpath("//a[@href='group.php']").click()
+        if not (wd.current_url.endswith("/group.php") and len(wd.find_elements_by_name("new"))):
+            wd.find_element_by_xpath("//a[@href='group.php']").click()
 
     def add(self, group):
         wd = self.app.wd
