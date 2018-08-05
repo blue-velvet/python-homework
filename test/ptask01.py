@@ -13,11 +13,11 @@ def app(request):
 
 def test_add_group(app):
     app.session.login()
-    app.add_group(Group("Group 01", "Group 01 footer"))
+    app.group.add(Group("Group 01", "Group 01 footer"))
     app.session.logout()
 
 
 def test_add_contact(app):
     app.session.login()
-    app.add_contact(Contact("John", "Doe", "Baker str."))
+    app.contact.add(Contact("John", "Doe", "Baker str."))
     app.session.logout()
