@@ -1,4 +1,5 @@
 from selenium.webdriver.firefox.webdriver import WebDriver
+from fixture.session import SessionHelper
 
 
 class Application:
@@ -6,17 +7,11 @@ class Application:
     def __init__(self):
         self.wd = WebDriver(executable_path="C:\\Users\\KC\\PycharmProjects\\drivers\\geckodriver.exe")
         self.wd.implicitly_wait(60)
+        self.session = SessionHelper(self)
 
     def open_home_page(self):
         wd = self.wd
         wd.get("http://localhost/addressbook/")
-
-    def login(self):
-        wd = self.wd
-        self.open_home_page()
-        wd.find_element_by_name("user").send_keys("admin")
-        wd.find_element_by_name("pass").send_keys("secret")
-        wd.find_element_by_xpath("//input[@type='submit']").click()
 
     def add_group(self, group):
         wd = self.wd
@@ -33,10 +28,6 @@ class Application:
         wd.find_element_by_name("lastname").send_keys(contact.lastname)
         wd.find_element_by_name("address").send_keys(contact.address)
         wd.find_element_by_name("submit").click()
-
-    def logout(self):
-        wd = self.wd
-        wd.find_element_by_link_text("Logout").click()
 
     def destroy(self):
         self.wd.quit()

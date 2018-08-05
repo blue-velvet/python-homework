@@ -12,21 +12,12 @@ def app(request):
 
 
 def test_add_group(app):
-    app.login()
+    app.session.login()
     app.add_group(Group("Group 01", "Group 01 footer"))
-    app.logout()
+    app.session.logout()
 
 
 def test_add_contact(app):
-    app.login()
+    app.session.login()
     app.add_contact(Contact("John", "Doe", "Baker str."))
-    app.logout()
-
-
-
-
-
-
-
-
-
+    app.session.logout()
