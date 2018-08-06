@@ -4,7 +4,7 @@ from fixture.application import Application
 fixture = None
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture#(scope='session')
 def app(request):
     global fixture
     if fixture is None:
