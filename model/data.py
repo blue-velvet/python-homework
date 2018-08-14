@@ -1,7 +1,8 @@
 class Group:
-    def __init__(self, group_name=None, group_footer=None):
+    def __init__(self, group_name=None, group_footer=None, id=None):
         self.group_name = group_name
         self.group_footer = group_footer
+        self.id = id
 
 class Contact:
     def __init__(self, firstname=None, lastname=None, address=None):
