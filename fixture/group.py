@@ -31,23 +31,26 @@ class GroupHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
     def select_group(self):
-        wd = self.app.wd
-        wd.find_element_by_name("selected[]").click()
+        self.select_group_by_index(self, 0)
 
-    def modify(self, group):
+    def select_group_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
+    def modify_group_by_index(self, group, index):
         wd = self.app.wd
         self.go_to_group_page()
-        self.select_group()
+        self.select_group_by_index(index)
         wd.find_element_by_name("edit").click()
         self.type("group_name", group.group_name)
         wd.find_element_by_name("update").click()
         self.go_to_group_page()
         self.group_cache = None
 
-    def delete(self):
+    def delete_group_by_index(self, index):
         wd = self.app.wd
         self.go_to_group_page()
-        self.select_group()
+        self.select_group_by_index(index)
         wd.find_element_by_name("delete").click()
         self.go_to_group_page()
         self.group_cache = None
