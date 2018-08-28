@@ -1,7 +1,6 @@
 from model.data import Group
 
 
-
 def test_add_group(app):
     old_groups = app.group.get_group_list()
     group = Group(group_name="Group 01", group_footer="Group 01 footer")
