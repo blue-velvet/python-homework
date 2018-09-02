@@ -1,22 +1,24 @@
 class SessionHelper:
-    def __init__(self, app):
+    def __init__(self, app, username=None, password=None):
         self.app = app
+        self.username = username
+        self.password = password
 
-    def login(self):
+    def login(self, username, password):
         wd = self.app.wd
         self.app.open_home_page()
-        wd.find_element_by_name("user").send_keys("admin")
-        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_name("user").send_keys(username)
+        wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//input[@type='submit']").click()
 
-    def ensure_login(self):
+    def ensure_login(self, username, password):
         wd = self.app.wd
         if self.is_logged_in():
             if self.is_logged_in_as():
                 return
             else:
                 self.logout()
-        self.login()
+        self.login(username, password)
 
 
     def logout(self):
