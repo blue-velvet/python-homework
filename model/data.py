@@ -14,14 +14,14 @@ class Group:
             return maxsize
 
     def __repr__(self):
-        return "%s:%s" % (self.id, self.group_name)
+        return "%s:%s:%s" % (self.id, self.group_name, self.group_footer)
 
     def __eq__(self, other):
         return (self.id == None or other.id == None or self.id == other.id) and self.group_name == other.group_name
 
 class Contact:
     def __init__(self, firstname=None, lastname=None, address=None, homephone=None, mobilephone=None, workphone=None,
-                 secondaryphone=None, id=None):
+                 secondaryphone=None, all_phones_from_home_page=None, id=None):
         self.firstname = firstname
         self.lastname = lastname
         self.address = address
@@ -29,6 +29,7 @@ class Contact:
         self.mobilephone = mobilephone
         self.workphone = workphone
         self.secondaryphone = secondaryphone
+        self.all_phones_from_home_page = all_phones_from_home_page
         self.id = id
 
     def id_or_max(self):
