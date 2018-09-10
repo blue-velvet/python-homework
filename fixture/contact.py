@@ -103,8 +103,8 @@ class ContactHelper:
         workphone = wd.find_element_by_name("work").get_attribute("value")
         secondaryphone = wd.find_element_by_name("phone2").get_attribute("value")
         email = wd.find_element_by_name("email").get_attribute("value")
-        email2 = wd.find_element_by_name("email").get_attribute("value")
-        email3 = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
         id = wd.find_element_by_name("id").get_attribute("value")
         return Contact(firstname=firstname, lastname=lastname, homephone=homephone, mobilephone=mobilephone,
                        workphone=workphone, secondaryphone=secondaryphone, email=email, email2=email2,
@@ -118,4 +118,10 @@ class ContactHelper:
         mobilephone = re.search("M: (.*)", text).group(1)
         workphone = re.search("W: (.*)", text).group(1)
         secondaryphone = re.search("P: (.*)", text).group(1)
-        return Contact(homephone=homephone, mobilephone=mobilephone, workphone=workphone, secondaryphone=secondaryphone, id=id)
+        content = wd.find_element_by_css_selector("div[id='content']")
+        emails = content.find_elements_by_tag_name("a")
+        email = emails[0].text
+        email2 = emails[1].text
+        email3 = emails[2].text
+        return Contact(homephone=homephone, mobilephone=mobilephone, workphone=workphone, secondaryphone=secondaryphone,
+                       email=email, email2=email2, email3=email3, id=id)
