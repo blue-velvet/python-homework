@@ -1,12 +1,12 @@
 {
   "web": {
-    "baseUrl": "http://192.168.4.161/addressbook/",
+    "baseUrl": "http://localhost/addressbook/",
     "username": "admin",
     "password": "secret"
   },
 
   "db": {
-    "host": "http://192.168.4.161/",
+    "host": "localhost",
     "name": "addressbook",
     "user": "root",
     "password": ""

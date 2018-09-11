@@ -1,38 +1,8 @@
 [
   {
     "py/object": "model.data.Group",
-    "group_footer": "",
-    "group_name": "",
-    "id": null
-  },
-  {
-    "py/object": "model.data.Group",
-    "group_footer": "footer",
-    "group_name": "nameX ?T",
-    "id": null
-  },
-  {
-    "py/object": "model.data.Group",
-    "group_footer": "footer6N\".",
-    "group_name": "name |ni+",
-    "id": null
-  },
-  {
-    "py/object": "model.data.Group",
-    "group_footer": "footerM^q&BpiR\"Le ",
-    "group_name": "name~[r}6 ",
-    "id": null
-  },
-  {
-    "py/object": "model.data.Group",
-    "group_footer": "footersl8ksCh7O",
-    "group_name": "name,O k5",
-    "id": null
-  },
-  {
-    "py/object": "model.data.Group",
-    "group_footer": "footerJeKw3|#45*$* N",
-    "group_name": "name&",
+    "group_footer": "footer6",
+    "group_name": "namebnZ,qQ",
     "id": null
   }
 ]

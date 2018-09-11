@@ -11,8 +11,8 @@ class Application:
         if browser == "firefox":
             self.wd = webdriver.Firefox(executable_path="C:\\Users\\KC\\PycharmProjects\\drivers\\geckodriver.exe")
         elif browser == "chrome":
-            #self.wd = webdriver.Chrome(executable_path="C:\\Users\\KC\\PycharmProjects\\drivers\\chromedriver.exe")
-            self.wd = webdriver.Chrome(executable_path = r"C:\Users\kchumakov.000\Documents\drivers\chromedriver.exe")
+            self.wd = webdriver.Chrome(executable_path="C:\\Users\\KC\\PycharmProjects\\drivers\\chromedriver.exe")
+            #self.wd = webdriver.Chrome(executable_path = r"C:\Users\kchumakov.000\Documents\drivers\chromedriver.exe")
         else:
             raise ValueError("Unrecognized browser %s" % browser)
         #self.wd.implicitly_wait(5)
